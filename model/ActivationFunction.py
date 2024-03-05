@@ -52,7 +52,7 @@ class ActivationFunction:
             '''
             Backward passing for Softmax activation function.
             The derivative of the softmax function is given by the Jacobian matrix.
-            Jacobian matrix is just taking the derivative of the softmax function with respect to the input.
+            Jacobian matrix is a square matrix containing all first-order partial derivatives of the output vector.
             '''
             self.dinputs = np.empty_like(dvalues)
             for index, (single_output, single_dvalues) in enumerate(zip(self.output, dvalues)):

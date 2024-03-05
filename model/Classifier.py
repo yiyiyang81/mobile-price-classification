@@ -6,7 +6,7 @@ class Classifier:
 
     class Softmax_CategoricalCrossentropy():
         def __init__(self):
-            # Combines softmax activation with categorical crossentropy loss for multi-class classification.
+            # This class combines softmax activation with categorical crossentropy loss.
             # Softmax is used for the forward pass to convert logits to probabilities.
             # CategoricalCrossentropy evaluates how well these probabilities match the true labels.
             self.activation = ActivationFunction.Softmax()

@@ -1,5 +1,5 @@
 import numpy as np
-# Assuming the Layer class is defined elsewhere and imported here
+from .Layer import Layer
 
 class Optimizer:
 
@@ -7,8 +7,8 @@ class Optimizer:
         def __init__(self, learning_rate: float = 1.0, decay: float = 0.0, momentum: float = 0.0) -> None:
             # Initialize the optimizer with the given learning rate, decay, and momentum
             # learning_rate: The step size used for each iteration of the parameter update.
-            # decay: A factor used to decrease the learning rate over time, helping to stabilize the updates.
-            # momentum: A factor that helps to accelerate SGD in the relevant direction and dampen oscillations.
+            # decay: The variable used to decrease the learning rate over time, helping to stabilize the updates.
+            # momentum: The variable that helps to accelerate SGD in the relevant direction and dampen oscillations.
             self.learning_rate = learning_rate
             self.current_learning_rate = learning_rate
             self.decay = decay
