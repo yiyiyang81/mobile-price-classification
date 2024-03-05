@@ -4,7 +4,7 @@ class ActivationFunction:
     
     class ReLU:
 
-        def forward(self, inputs:[]):
+        def forward(self, inputs:[])->None:
             '''
             Forward psasing for ReLU activation function.
             If the input is less than 0, the output is 0, else the output is the input.
@@ -12,7 +12,7 @@ class ActivationFunction:
             self.inputs = inputs
             self.output = np.maximum(0, inputs)
 
-        def backward(self, dvalues:[]):
+        def backward(self, dvalues:[])->None:
             '''
             Backward passing for ReLU activation function.
             If the input is less than 0, the gradient is 0, else the gradient is 1.
@@ -23,14 +23,14 @@ class ActivationFunction:
             self.dinputs[self.inputs <= 0] = 0
 
     class Sigmoid:
-        def forward(self, inputs:[]):
+        def forward(self, inputs:[])->None:
             '''
             Forward passing for Sigmoid activation function.
             The sigmoid function is given by 1 / (1 + e^-x)
             '''
             self.output = 1 / (1 + np.exp(-inputs))
 
-        def backward(self, dvalues:[]):
+        def backward(self, dvalues:[])->None:
             '''
             Backward passing for Sigmoid activation function.
             The derivative of the sigmoid function is given by sigmoid(x) * (1 - sigmoid(x))
@@ -39,7 +39,7 @@ class ActivationFunction:
 
 
     class Softmax:
-        def forward(self, inputs:[]):
+        def forward(self, inputs:[])->None:
             '''
             Forward passing for Softmax activation function.
             The softmax function is given by e^x / sum(e^x)
@@ -48,7 +48,7 @@ class ActivationFunction:
             probabilities = exp_values / np.sum(exp_values, axis=1, keepdims=True)
             self.output = probabilities
 
-        def backward(self, dvalues:[]):
+        def backward(self, dvalues:[])->None:
             '''
             Backward passing for Softmax activation function.
             The derivative of the softmax function is given by the Jacobian matrix.
